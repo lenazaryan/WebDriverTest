@@ -101,7 +101,7 @@
                         <testFailureIgnore>false</testFailureIgnore>
                             <systemPropertyVariables>
                                 <propertyName>allure.results.directory</propertyName>
-                                <buildDirectory>target/allure-results</buildDirectory>
+                                <buildDirectory>src/target/allure-results</buildDirectory>
                             </systemPropertyVariables>
 <!--                        <argLine>-->
 <!--                            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"-->
