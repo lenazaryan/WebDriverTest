@@ -1,5 +1,6 @@
 package org.example;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,21 +27,25 @@ public class MainPage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("клик кнопки авторизации в личном кабинете")
     public MainPage ShowAuth() {
         this.auth_menu.click();
         return this;
     }
 
+    @Step("клик кнопки логина")
     public MainPage ClickLogin() {
         this.login_button.click();
         return this;
     }
 
+    @Step("ввод поискового запроса")
     public MainPage InputSearchQuery(String query) {
         this.search_box.sendKeys(query);
         return this;
     }
 
+    @Step("клик кнопки поиска")
     public MainPage Search() {
         this.search_button.click();
         return this;
@@ -50,10 +55,12 @@ public class MainPage {
         return this.product;
     }
 
+    @Step("локализация по имени продукта на MainPage")
     public String GetProductName(WebElement product) {
         return product.findElement(By.className("caption")).findElement(By.className("name")).getText();
     }
 
+    @Step("клик кнопки добавления в корзину")
     public MainPage AddToCart(WebElement product) {
         product.findElement(By.xpath("//button[contains(text(), 'В корзину')]")).click();
         return this;

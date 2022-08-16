@@ -1,5 +1,6 @@
 package org.example;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,14 +20,17 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("ввод имейла")
     public LoginPage InputEmail(String email) {
         this.email_field.sendKeys(email);
         return this;
     }
+    @Step("ввод пароля")
     public LoginPage InputPassword(String password) {
         this.password_field.sendKeys(password);
         return this;
     }
+    @Step("клик кнопки логина")
     public LoginPage ClickLogin() {
         this.login_button.click();
         return this;

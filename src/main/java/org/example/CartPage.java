@@ -1,5 +1,6 @@
 package org.example;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +18,7 @@ public class CartPage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("локализация продукта по имени на CartPage")
     public String getFirstProductName() {
         return firstProduct.findElement(By.className("name")).getText();
     }
